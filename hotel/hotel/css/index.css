@@ -1,0 +1,31 @@
+h1 { 
+  display: block;
+  font-size: 1.1em;
+  font-weight: bold;
+  font-family: Arial;
+}
+
+h2 { 
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: Arial;
+}
+
+
+p{
+	font-family: Arial;
+	margin-left:25px;
+	
+	
+}
+
+
+footer{
+	color:#286977;
+	height:30px;
+	background-color:#BCD175;
+	font-size:0.9em;
+	
+}
+
