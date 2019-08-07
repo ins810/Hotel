@@ -1,0 +1,64 @@
+h1 { 
+  display: block;
+  font-size: 1.1em;
+  font-weight: bold;
+  font-family: Verdana;
+  color: white;
+}
+
+
+
+
+
+
+h2 { 
+color: white;
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: Arial;
+}
+
+
+p{
+	font-family: Arial;
+	margin-left:25px;
+	color: white;
+	
+	
+}
+
+#todo {
+	
+	background-color:#1C4d54;
+	text-align: center;
+	height: 90%;
+
+	
+	
+	
+}
+
+#left {
+	
+	text-align: left;
+	
+}
+
+
+
+footer{
+	color:white;
+	height:40px;
+	background-color:#5100EB;
+	font-size:0.5em;
+	background-color:#8FAC39
+
+}
+	
+
+  
+
+
+
+
