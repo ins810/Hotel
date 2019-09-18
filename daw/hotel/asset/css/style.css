@@ -1,0 +1,217 @@
+body{
+    margin: 0;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 5;
+    overflow: hidden;
+    background-color: rgb(45, 124, 120);
+    top: 0;
+    position: fixed;
+    left:0 ;
+    right: 0;
+    height: 70px;
+    font-size: 17px;
+    font-family:Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+
+  li {
+    float: right;
+  }
+  
+
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 24px 40px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    font-size: 20px;
+    color: rgb(255, 233, 107);   }
+  
+  .active {
+    font-size: 20px;
+    color: rgb(255, 233, 107);
+
+  }
+
+
+
+  .gallery-container {
+    padding: 0px;
+    max-width: 100%;
+    margin-top: 70px;
+    border: 0;
+    margin-left: -10px;
+    margin-right: -10px;
+    height: 500px;
+
+    }
+
+    
+    
+    /* Hide the images by default */
+    .mySlides {
+    display: none;
+    width: 100%;
+    }
+    
+    /* Next & previous buttons */
+    .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    background-color: rgba(0,0,0,0.1);
+    }
+    
+    /* Position the "next button" to the right */
+    .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+    }
+    
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+    }
+    
+    /* Caption text */
+
+    .imgslide {
+    width: 101%;
+    height: 500px;
+    }
+    
+ 
+    
+    /* Fading animation */
+    .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    }
+    
+    @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+    }
+    
+    @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+    }
+
+    .habitaciones:after{
+      content: "";
+      display: table;
+      clear: both;
+      margin-top: 50px;
+
+      }
+
+      .eventos:after{
+        content: "";
+        display: table;
+        clear: both;
+        margin-top: 50px;
+  
+        }
+      table,th, td{
+        border: 20px solid rgba(0, 0, 0, 0);
+        border-collapse: collapse;
+        font-size: 1em;
+        font-weight: bold;
+        font-family:Arial, Helvetica, sans-serif;
+        color:  rgb(45, 124, 120);
+        margin-top: 10px;
+      }
+
+
+    footer {
+      background-color: rgb(45, 124, 120);
+      padding: 10px;
+      font-family:Arial, Helvetica, sans-serif;
+
+    }
+    h1{
+      text-align: center;
+      color:  rgb(45, 124, 120);
+
+    }
+    h2{
+      text-align: center;
+      color: white;
+
+    }
+
+    .button {
+      background-color:  rgb(45, 124, 120); /*  */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    .button1 {
+      background-color: white; 
+      color: black; 
+      border: 2px solid rgb(45, 124, 120);
+    }
+
+    input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    input[type=submit] {
+      width: 100%;
+      background-color:  rgb(45, 124, 120);
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color: rgb(45, 124, 120);
+    }
+    
+    .form {
+      width: 50%;
+      margin-left: 25%;
+      margin-right: 25%;
+      border-radius: 5px;
+      background-color: #d4d4d475;
+      padding: 20px;
+      font-family:Arial, Helvetica, sans-serif;
+
+    }
