@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /daw2018/ignacio/
+  RewriteBase /ignacio/
   # RewriteCond %{HTTP_HOST} ^127.0.0.1$
   # RewriteRule . - [E=REWRITEBASE:/]
   RewriteCond $1 !^(index\.php|images|assets|robots\.txt|bootstrap.min.css\.map)

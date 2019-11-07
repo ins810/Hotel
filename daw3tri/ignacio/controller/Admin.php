@@ -20,12 +20,9 @@ class Admin extends Controller{
     }
     
     public function index() {
-        //echo "ADMIN";
-        //die;
         $this->view->load("header");
         $this->view->load("nav");
         $this->view->load("index");
-        $this->view->load("footer");
     }
     
 }
