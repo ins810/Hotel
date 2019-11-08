@@ -1,6 +1,5 @@
 <?php
 
-
 $path = dirname($_SERVER['PHP_SELF']);
 $position = strrpos($path,'/') + 1;
 $localDir = substr($path,$position);
@@ -15,9 +14,9 @@ $config->asset = $config->base_url . 'view/templates/';
 $config->template = 'default';
 
 if ($_SERVER['HTTP_HOST'] === "localhost" || $_SERVER['HTTP_HOST'] == '127.0.0.1') {
-    $config->dbuser = 'root'; 
-    $config->dbpassword = ''; 
-    $config->dbname = 'dawii';
-    $config->dbhost = '127.0.0.1'; 
-    $config->dbdrive = 'mysql'; 
+    $config->dbuser = 'root'; //nomedoaluno
+    $config->dbpassword = ''; //senha
+    $config->dbname = 'dawii'; //nomedoaluno
+    $config->dbhost = '127.0.0.1'; //servidor (127.0.0.1)
+    $config->dbdrive = 'mysql'; //servidor (127.0.0.1)
 } 
