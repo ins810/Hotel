@@ -7,7 +7,6 @@ class Home extends Controller{
 
     public function index() {
 
-
         $this->view->load("header");
         $this->view->load("nav");
         $this->view->load("index");
@@ -16,3 +15,6 @@ class Home extends Controller{
 
   
 }
+
+
+

@@ -4,6 +4,7 @@
 class Habitaciones extends Controller {
 
 
+
     public function __construct() {
         parent::__construct();
         $this->model=new HabitacionDAO();

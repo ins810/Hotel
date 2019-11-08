@@ -2,7 +2,7 @@
 <?php
 
 class View {
- 
+
     private $base_url;
     private $url;
     private $asset;

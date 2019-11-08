@@ -27,12 +27,13 @@ class HabitacionDAO extends Model {
     public function getHabitacionById($id) {
         $sql = "SELECT * FROM habitacion  WHERE id_habitacion = :id_habitacion";
         $result = $this->ExecuteQuery($sql, [':id_habitacion' => $id]);
-
         if ($result) {
-      
-            $habitacion = $result[0];
-            new Habitacion($habitacion['id_habitacion'], $habitacion['descripcion'], $habitacion['src'], $habitacion['name']);        } else {
-            return null;
+            // $habitacion = $result[0];
+            // $hab = new Habitacion($habitacion['id_habitacion'], $habitacion['descripcion'], $habitacion['src'], $habitacion['name']);
+            // return $hab;
+            return $result[0];
+        } else {
+            return false;
         }
     }
 

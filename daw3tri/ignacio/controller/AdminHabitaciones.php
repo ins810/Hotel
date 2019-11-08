@@ -12,7 +12,7 @@ class AdminHabitaciones extends Admin {
         $data['listHabitacion'] = $this->model->getListHabitacion();
         $this->view->load("header");
         $this->view->load("nav");
-        $this->view->load("habitacion_list", $data);
+        $this->view->load("index", $data);
         $this->view->load("footer");
 
 
@@ -42,11 +42,11 @@ class AdminHabitaciones extends Admin {
             $src = $caminho;
             $descripcion = filter_input(INPUT_POST, 'descripcion', FILTER_SANITIZE_STRING);
             if ($name && $src && $descripcion ) {
-                $img = new Imagem($descripcion, $src, $name,null);
+                $habitacion = new Habitacion($descripcion, $src, $name,null);
     
-                if($this->model->insertImagem($img)){
+                if($this->model->insertHabitacion($habitacion)){
     
-                  $this->view->location('AdminGallery');
+                  $this->view->location('AdminHabitaciones');
                     return true;
                 } else {
                     $data['msg'] = 'Erro ao cadastrar imAgem!';
@@ -55,7 +55,7 @@ class AdminHabitaciones extends Admin {
                 $data['msg'] = 'Preencha todos os campos!';
             }
       }
-      else{$data['msg'] = 'Error ao subir img';}
+      else{$data['msg'] = 'Error ao subir habitacion';}
       }
     
       $this->view->load('header');
@@ -64,9 +64,8 @@ class AdminHabitaciones extends Admin {
       $this->view->load('footer');
     }
       public function edit($id) {
-        $data['habitacion'] = $this->model->getImagemById($id);
+        $data['habitacion'] = $this->model->getHabitacionById($id);
         $data['msg'] = "";
-    
       if (filter_input(INPUT_POST, 'upd')) {
         $caminho = getcwd();
         $diretorio =  $caminho. "/system/upload/";
@@ -85,27 +84,25 @@ class AdminHabitaciones extends Admin {
             $if = false;
         }
         if( $if = true){
+            $id_hab = filter_input(INPUT_POST, 'id'); 
             $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
             $src = $caminho;
             $descripcion = filter_input(INPUT_POST, 'descripcion', FILTER_SANITIZE_STRING);
             if ($name && $src && $descripcion ) {
-              $img = new Imagem($descripcion, $src, $name,null);
+              $habitacion = new Habitacion($descripcion, $src, $name, $id);
     
-                if($this->model->updateImg($img)){
-    
-                  $this->view->location('AdminGallery');
+                if($this->model->updateImg($habitacion)){
+                    // $this->view->location($this->url.'/w');
+                    $this->view->location($this->config->base_url.'admin');
                     return true;
                 } else {
                     $data['msg'] = 'Erro ao editar imAgem!';
-    
-                    var_dump($data);
-                  //
                 }
             } else {
                 $data['msg'] = 'Preencha todos os campos!';
             }
       }
-      else{$data['msg'] = 'Error ao subir img';}
+      else{$data['msg'] = 'Error ao subir habitacion';}
       }
     
       $this->view->load('header');

@@ -2,7 +2,7 @@
 
 
 class Habitacion {
-
+  
     private $descripcion;
     private $src;
     private $name;
