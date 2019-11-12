@@ -1,5 +1,26 @@
 <?php
-
+//Listar diretórios e retornar array com todas as pastas e subpastas
+//function getFolders($dir = false) {
+//    $server_sign = filter_input(INPUT_SERVER, 'SERVER_SIGNATURE', FILTER_SANITIZE_STRING);
+//    $unix_server = (stristr($server_sign, "win")) ? false : true;
+////    (teste)? verdadeira: falsa;
+//    $slash = ($unix_server) ? "/" : "\\";
+//    $dir = (!$dir) ? getcwd() : $dir;
+//    $open_dir = opendir($dir);
+//    $folders = [];
+//    while ($item = readdir($open_dir)) {
+//        if ($item != "." && $item != "..") {
+//            $path = filetype(realpath($dir . $slash . $item));
+//            if ($path == "dir") {
+//                $folders[] = $item;
+//                foreach (getFolders(realpath($dir . $slash . $item)) as $folder) {
+//                    $folders[] = $item . $slash . $folder;
+//                }
+//            }
+//        }
+//    }
+//    return $folders;
+//}
 
 function autoLoad($class) {
     $found = false;
@@ -10,8 +31,8 @@ function autoLoad($class) {
         include_once "$class.php";
         $found = true;
     } else {
-//   
-        $folders = ['model','view','controller','system'];
+//        $folders = getFolders();//Muito lento
+        $folders = ['model','view','controller','system'];//Procurar em pastas principais
         foreach ($folders as $folder) {
             if (file_exists("$folder/$class.class.php")) {
                 include_once "$folder/$class.class.php";

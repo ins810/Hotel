@@ -1,6 +1,16 @@
 <?php
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
+/**
+ * Description of NoticiaDAO
+ *
+ * @author IFSul
+ */
 class CategoriaDAO extends Model {
 
     private $listCategoria;
@@ -44,8 +54,8 @@ class CategoriaDAO extends Model {
         }
     }
     public function updateCategoria($categoria) {
-        $sql = "UPDATE categoria SET descripcion = :descripcion, title = :title, text = :text  WHERE id_categoria = :id_categoria";
-        $param=[':descripcion'=>$categoria->getDescripcion(),':title'=>$categoria->getTitle(), ':text'=>$categoria->getText(),':id_categoria'=>$categoria->getId_categoria()];
+        $sql = "UPDATE categoria SET title = :title, text = :text  WHERE id_categoria = :id_categoria";
+        $param=[':title'=>$categoria->getTitle(), ':text'=>$categoria->getText(),':id_categoria'=>$categoria->getId_categoria()];
         if($this->ExecuteCommand($sql, $param)){
             return true;
         }else{
