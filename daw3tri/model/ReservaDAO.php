@@ -52,9 +52,9 @@ class ReservaDAO extends Model {
 //        var_dump($result);
 //        echo "</pre>";
         if ($result) {
-            $listHabitacion = $this->getHabitacionFromReserva($id);
+            // $listHabitacion = $this->getHabitacionFromReserva($id);
             $reserva = $result[0];
-            return new Reserva($reserva['text'], $reserva['title'], $listHabitacion, $reserva['id_reserva']);
+            return new Reserva($reserva['text'], $reserva['title'], null, $reserva['id_reserva']);
         } else {
             return null;
         }
@@ -76,25 +76,50 @@ class ReservaDAO extends Model {
         return $listaHabitacion;
     }
 
-    public function insereReserva($reserva) {
+    public function insertReserva($reserva, $id_habitacion) {
         $sql = "INSERT INTO reserva(title,text) VALUES(:title,:text)";
         $result = $this->ExecuteCommand($sql, 
                 [':title' => $reserva->getTitle(),
             ':text' => $reserva->getText()]);
         if ($result) {
-            return true;
+            if($lastInsert_id = $this->lastInsert()){
+                if(insertReserva_habitacion($lastInsert_id, $id_habitacion)){
+                    return true;
+                }
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public function insertReserva_habitacion($lastInsert_id, $id_habitacion){
+        $lastInsert("INSERT INTO `reserva_habitacion`(`id_reserva`, `id_habitacion`) VALUES (:id1, :id2)");
+        $result = $this->ExecuteCommand($sql, 
+                [':id1' => $lastInsert_id,
+            ':id2' => $id_habitacion]);
+        $result = $this->ExecuteCommand($sql, $param);
+        if ($result) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
+    public function lastInsert(){
+        $sql = ("SELECT id_reserva FROM :reserva ORDER BY id_reserva DESC LIMIT 1");
+        $result = $this->ExecuteCommand($sql,null);
+        if ($result) {
+            return $result;
         } else {
             return false;
         }
     }
     
     
-    public function atualizarReserva($reserva) {
-        $sql = 'UPDATE reserva SET title = :title,'
-                . ' text=:text  WHERE id_reserva =:id';
-        $param = [':title'=>$reserva->getTitle(),
-            ':text'=>$reserva->getText(),
-            ':id'=>$reserva->getIdreserva()];
+    public function updateReserva($reserva) {
+        $sql = 'UPDATE `reserva` SET `title`=:title,`text`=:text WHERE `id_reserva` = :id';
+        $param = [':title'=>$reserva->getTitle(),':text'=>$reserva->getText(),':id'=>$reserva->getIdreserva()];
+        print_r($param);
         if($this->ExecuteCommand($sql, $param)){
             return true;
         }else{
@@ -109,6 +134,19 @@ class ReservaDAO extends Model {
         }else{
             return false;
         }
+    }
+
+    public function getListHabitacion() {
+        $sql = "SELECT * FROM habitacion";
+        $result = $this->ExecuteQuery($sql, []);
+
+        foreach ($result as $linha) {
+            $habitacion = new Habitacion($linha['descripcion'], $linha['src'], $linha['name'], $linha['id_habitacion']);
+
+            $this->listHabitacion[] = $habitacion;
+        }
+
+        return $this->listHabitacion;
     }
     
 }
