@@ -14,43 +14,43 @@
 class Reserva {
     //put your code here
     
-    private $text;
-    private $title;
+    private $name;
+    private $email;
     private $idreserva;
-    private $listHabitacion;
+    private $password;
     
-    public function __construct($text, $title,$listHabitacion=null, $idreserva=null) {
-        $this->text = $text;
-        $this->title = $title;
+    public function __construct($name, $email,$password=null, $idreserva=null) {
+        $this->name = $name;
+        $this->email = $email;
         $this->idreserva = $idreserva;
-        $this->listHabitacion = $listHabitacion;
+        $this->password = $password;
     }
-    function getListHabitacion() {
-        return $this->listHabitacion;
-    }
-
-    function setListHabitacion($listHabitacion) {
-        $this->listHabitacion = $listHabitacion;
+    function getPassword() {
+        return $this->password;
     }
 
-    function getText() {
-        return $this->text;
+    function setPassword($password) {
+        $this->password = $password;
+    }
+
+    function getName() {
+        return $this->name;
     }
 
     function getTitle() {
-        return $this->title;
+        return $this->email;
     }
 
     function getIdreserva() {
         return $this->idreserva;
     }
 
-    function setText($text) {
-        $this->text = $text;
+    function setName($name) {
+        $this->name = $name;
     }
 
-    function setTitle($title) {
-        $this->title = $title;
+    function setTitle($email) {
+        $this->email = $email;
     }
 
     function setIdreserva($idreserva) {
