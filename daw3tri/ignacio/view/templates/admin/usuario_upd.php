@@ -12,15 +12,14 @@ var_dump($usuario)
                   <label >Nombre</label>
                   <input type="text" id="fname" name="name" value="<?php echo $usuario->getName() ?>">
               
-                  <label>email</label>
+                  <label>Email</label>
                   <input type="text"  name="gmail" value="<?php echo $usuario->getGmail()?>">
                   
-                  <label>contrasenha</label>
+                  <label>Contraseña</label>
                   <input type="password"  name="password" value="<?php echo $usuario->getPassword() ?>">
 
                   
-                  <label>selecionar img</label>
-                  <input type="file"  name="arquivo" placeholder="arquivo">
+               
               
                 <input type="hidden" name="id" value="<?php echo $usuario->getId_usuario() ?>">
                   <input type="submit" name='upd' value="Enviar">

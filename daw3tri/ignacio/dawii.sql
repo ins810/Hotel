@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 13-Nov-2019 às 03:41
--- Versão do servidor: 10.4.6-MariaDB
--- versão do PHP: 7.3.9
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 27-11-2019 a las 07:58:33
+-- Versión del servidor: 10.1.37-MariaDB
+-- Versión de PHP: 5.6.40
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `dawii`
+-- Base de datos: `dawii`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `categoria`
+-- Estructura de tabla para la tabla `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -35,17 +35,17 @@ CREATE TABLE `categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `categoria`
+-- Volcado de datos para la tabla `categoria`
 --
 
 INSERT INTO `categoria` (`id_categoria`, `title`, `text`) VALUES
-(1, 'aaak', 0),
-(2, 'llll', 2147483647);
+(3, 'Cat', 0),
+(7, 'Ignacio', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `categoria_habitacion`
+-- Estructura de tabla para la tabla `categoria_habitacion`
 --
 
 CREATE TABLE `categoria_habitacion` (
@@ -54,7 +54,7 @@ CREATE TABLE `categoria_habitacion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `categoria_habitacion`
+-- Volcado de datos para la tabla `categoria_habitacion`
 --
 
 INSERT INTO `categoria_habitacion` (`id_categoria`, `id_habitacion`) VALUES
@@ -64,7 +64,7 @@ INSERT INTO `categoria_habitacion` (`id_categoria`, `id_habitacion`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `evento`
+-- Estructura de tabla para la tabla `evento`
 --
 
 CREATE TABLE `evento` (
@@ -75,17 +75,16 @@ CREATE TABLE `evento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `evento`
+-- Volcado de datos para la tabla `evento`
 --
 
 INSERT INTO `evento` (`id_evento`, `name`, `text`, `fecha`) VALUES
-(1, 'ss', 'sss', '2019-11-19'),
-(2, 'ss', 'sss', '2019-11-19');
+(1, 'Casamiento', 'Para 120 personas', '2019-12-10');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `habitacion`
+-- Estructura de tabla para la tabla `habitacion`
 --
 
 CREATE TABLE `habitacion` (
@@ -96,19 +95,18 @@ CREATE TABLE `habitacion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `habitacion`
+-- Volcado de datos para la tabla `habitacion`
 --
 
 INSERT INTO `habitacion` (`id_habitacion`, `descripcion`, `src`, `name`) VALUES
-(1, '2', 'C:\\xampp\\htdocs\\daw2018\\ignacio', 'nnn'),
-(2, '87787', '42451e0cf3a65ccf9eb2a5ff795b299a1b4f.jpg', 'kkkk'),
-(3, 'amwdaomdp', '1385wp4244306.jpg', '3'),
-(4, 'aoaiwndo', '92761e0cf3a65ccf9eb2a5ff795b299a1b4f.jpg', '89779797778787787');
+(1, 'Habitación simple, incluye una cama de dos plazas, aire acondicionado y muchas comodidades.', '8989stan.png', 'STANDARD'),
+(2, 'Habitación completa, incluye cama king size, baño con jacuzzi y otras comodidades.', '1831superior.png', 'SUPERIOR'),
+(3, 'Habitación ejecutiva, incluye una cama king size, escritorio, aire acondicionado y muchas comodidades.', '5202deluxe.png', 'DELUXE');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `reserva`
+-- Estructura de tabla para la tabla `reserva`
 --
 
 CREATE TABLE `reserva` (
@@ -118,7 +116,7 @@ CREATE TABLE `reserva` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `reserva`
+-- Volcado de datos para la tabla `reserva`
 --
 
 INSERT INTO `reserva` (`id_reserva`, `title`, `text`) VALUES
@@ -135,7 +133,7 @@ INSERT INTO `reserva` (`id_reserva`, `title`, `text`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `reserva_habitacion`
+-- Estructura de tabla para la tabla `reserva_habitacion`
 --
 
 CREATE TABLE `reserva_habitacion` (
@@ -144,7 +142,7 @@ CREATE TABLE `reserva_habitacion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `reserva_habitacion`
+-- Volcado de datos para la tabla `reserva_habitacion`
 --
 
 INSERT INTO `reserva_habitacion` (`id_reserva`, `id_habitacion`) VALUES
@@ -154,7 +152,7 @@ INSERT INTO `reserva_habitacion` (`id_reserva`, `id_habitacion`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Estructura de tabla para la tabla `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -165,87 +163,84 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `name`, `gmail`, `password`) VALUES
-(1, 'rr', 'rr@g.com', '2222'),
-(2, 'rr', 'rr@g.com', '2222'),
-(3, 'aaaaa', 'admin@admin.coms', '123aaa'),
-(4, 'ssssss', 's@admin.coms', 'sssssssss'),
-(5, 'aa', 'admin@admin.coms', '123');
+(1, 'ins810ns@gmail.com', 'ins810ns@gmail.com', '123'),
+(2, 'rr', 'rr@g.com', '2222');
 
 --
--- Índices para tabelas despejadas
+-- Índices para tablas volcadas
 --
 
 --
--- Índices para tabela `categoria`
+-- Indices de la tabla `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_categoria`);
 
 --
--- Índices para tabela `evento`
+-- Indices de la tabla `evento`
 --
 ALTER TABLE `evento`
   ADD PRIMARY KEY (`id_evento`);
 
 --
--- Índices para tabela `habitacion`
+-- Indices de la tabla `habitacion`
 --
 ALTER TABLE `habitacion`
   ADD PRIMARY KEY (`id_habitacion`);
 
 --
--- Índices para tabela `reserva`
+-- Indices de la tabla `reserva`
 --
 ALTER TABLE `reserva`
   ADD PRIMARY KEY (`id_reserva`);
 
 --
--- Índices para tabela `reserva_habitacion`
+-- Indices de la tabla `reserva_habitacion`
 --
 ALTER TABLE `reserva_habitacion`
   ADD PRIMARY KEY (`id_reserva`,`id_habitacion`),
   ADD KEY `id_imagem` (`id_habitacion`);
 
 --
--- Índices para tabela `usuario`
+-- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de tabela `categoria`
+-- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT de tabela `evento`
+-- AUTO_INCREMENT de la tabla `evento`
 --
 ALTER TABLE `evento`
-  MODIFY `id_evento` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_evento` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de tabela `habitacion`
+-- AUTO_INCREMENT de la tabla `habitacion`
 --
 ALTER TABLE `habitacion`
-  MODIFY `id_habitacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_habitacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT de tabela `reserva`
+-- AUTO_INCREMENT de la tabla `reserva`
 --
 ALTER TABLE `reserva`
   MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT de tabela `usuario`
+-- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id_usuario` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;

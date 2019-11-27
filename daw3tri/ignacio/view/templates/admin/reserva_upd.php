@@ -15,8 +15,8 @@ var_dump($reserva);
                   <input type="text" id="fname" name="title" value="<?php echo $reserva->getTitle() ?>">
               
                   <label>Descripcion</label>
-                  <input type="text"  name="text" value="<?php echo $reserva->getText() ?>">
-              
+                  <input type="date"  name="text" value="<?php echo $reserva->getText() ?>">
+             
                   
                   <input type="hidden" name="id" value="<?php echo $reserva->getIdreserva() ?>">
                   <input type="submit" name='update' value="Enviar">

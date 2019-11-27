@@ -12,7 +12,7 @@
                   <input type="text" id="fname" name="name" placeholder="Nombre">
               
                   <label>Descripcion</label>
-                  <input type="number"  name="descripcion" placeholder="descripcions">
+                  <input type="text"  name="descripcion" placeholder="descripcions">
               
                   <label>selecionar img</label>
                   <input type="file"  name="arquivo" placeholder="arquivo">

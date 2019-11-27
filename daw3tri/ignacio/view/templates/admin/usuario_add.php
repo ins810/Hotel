@@ -14,7 +14,7 @@
                   <label>Email</label>
                   <input type="text"  name="gmail" placeholder="text">
                   
-                  <label>contrasenha</label>
+                  <label>Contraseña</label>
                   <input type="password"  name="password" placeholder="text">
               
                   <input type="submit" name='add' value="Enviar">

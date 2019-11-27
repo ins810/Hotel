@@ -13,24 +13,24 @@
  */
 class Habitaciones extends Controller {
 
-    //put your code here
-
     public function __construct() {
         parent::__construct();
-        $this->model=new HabitacionDAO();
+        $this->model = new HabitacionDAO();
 
     }
 
     public function index() {
-      $data['listHabitacion'] = $this->model->getListHabitacion();
-
-
+        $data['listHabitacion'] = $this->model->getListHabitacion();
         $this->view->load("header");
         $this->view->load("nav");
-        $this->view->load("index",$data);
+        $this->view->load("index", $data);
         $this->view->load("footer");
+
+
     }
 
 
 
 }
+
+

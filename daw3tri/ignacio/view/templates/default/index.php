@@ -2,11 +2,8 @@
 
 $listHabitacion = $data['listHabitacion'];
 
-
-
 ?>
-
-      <section class="container gallery-container">
+ <section class="container gallery-container">
 
       
         <div class="mySlides fade"> 
@@ -28,28 +25,27 @@ $listHabitacion = $data['listHabitacion'];
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </section>
 
+
     <section class="habitaciones" id="habitaciones" >
         <H1>HABITACIONES</H1>
-            <table >
-            <tr>
-         
+    <table >
 
-    </tr>
+<?php  foreach ($listHabitacion as $list): ?>
+         <td>
+            <img src="<?php echo $this->base_url?>system/upload/<?php echo $list->getSrc()?>"style="height: 375px; width:425px;"/>
+           <center> <?php echo $list->getName() ?> <br/><br/><br/>
+			<?php echo $list->getDescripcion() ?> </center>
+        </td>
+           
 
-    <?php foreach ($data['listHabitacion'] as $listHabitacion): ?>
-          <tr>
-              <td><?php echo $listHabitacion->getName() ?></td>
-               <td><?php echo substr($listHabitacion->getDescripcion(), 0, 15) . "..." ?></td>
-               <td>
-                <img src="<?php echo $this->base_url?>system/upload/<?php echo $listHabitacion->getSrc()?>" width="100"/>
-                </td>
-               
-          </tr>
+ <?php endforeach; ?>
+        </table>
 
-     <?php endforeach; ?>
-            </table>
+
+
+
     </section>
-    <section class="eventos" id="eventos">
+     <section class="eventos" id="eventos">
             <H1>EVENTOS</H1>
                 <table >
 				<center>
@@ -63,11 +59,9 @@ $listHabitacion = $data['listHabitacion'];
                           <td><img src="<?php echo $this->asset?>/imagen/sala2.jpg" style="height: 375px; width:425px;"></td>
                           <td><img src="<?php echo $this->asset?>/imagen/sala3.jpg" style="height: 375px; width:425px;"></td>
                      </tr>
-                     <tr>
-                            <td><a href="eventos.html"><button class="button button1"> Mas</button></a>                      </td>
-                            <td><a href="eventos.html"><button class="button button1"> Mas</button></a>                      </td>
-                            <td><a href="eventos.html"><button class="button button1"> Mas</button></a>                      </td>
-                    </tr>
+					 
+					 
+                    
                     </center>
                 </table>
         </section>

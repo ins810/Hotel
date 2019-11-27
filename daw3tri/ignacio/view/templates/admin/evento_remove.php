@@ -19,7 +19,7 @@ if($data['obj']){
           <div class="col-12 center">
                                 <div class="alert alert-danger alert-dismissable center">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                    VOCÊ TEM CERTEZA QUE QUER APAGAR?
+                                   Seguro?
                                     
                                     <?php echo $obj['name']?>
                                 </div>

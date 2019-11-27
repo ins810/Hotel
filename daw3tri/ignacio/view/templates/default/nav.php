@@ -1,11 +1,10 @@
 
 <body>
     <ul>
-					 <li><a href="<?php echo $this->base_url ?>Login">Login</a></li>
-                    <li><a href="index.html#habitaciones">Habitaciones</a></li>
-                    <li><a href="index.html#eventos">Eventos</a></li>
-                    <li><a href="index.html#contact">Contacto</a></li>
-					<li><a class="active" href="index.html">Home</a></li>
+        <li><a href="#contact">Contacto</a></li>
+        <li><a href="#eventos">Eventos</a></li>
+        <li><a href="#habitaciones">Habitaciones</a></li>
+		<li><a class="active" href="#home">Home</a></li>
      
 
       </ul>

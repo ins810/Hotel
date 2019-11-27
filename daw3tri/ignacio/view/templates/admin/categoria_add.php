@@ -8,10 +8,10 @@
  <section>
         <div class="form" >
                 <form  method="post" enctype="multipart/form-data">
-                  <label >Tituo</label>
+                  <label >Nombre</label>
                   <input type="text" id="fname" name="title" placeholder="Nombre">
               
-                  <label>Descripcion</label>
+                  <label>Informacion</label>
                   <input type="text"  name="text" placeholder="text">
               
                   <input type="submit" name='add' value="Enviar">

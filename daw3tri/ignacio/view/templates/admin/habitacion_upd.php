@@ -13,7 +13,7 @@ $habitacion = $data['habitacion'];
                   <input type="text" id="fname" name="name" value="<?php echo $habitacion['name'] ?>">
               
                   <label>Descripcion</label>
-                  <input type="number"  name="descripcion" value="<?php echo $habitacion['descripcion'] ?>">
+                  <input type="text"  name="descripcion" value="<?php echo $habitacion['descripcion'] ?>">
               
                   <label>selecionar img</label>
                   <input type="file"  name="arquivo" placeholder="arquivo">

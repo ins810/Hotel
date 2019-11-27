@@ -141,8 +141,12 @@ ul {
         font-family:Arial, Helvetica, sans-serif;
         color:  rgb(45, 124, 120);
         margin-top: 10px;
+        height: 375px;
+        width:425px;
       }
-
+table{
+  width: 100%;
+}
 
     footer {
       background-color: rgb(45, 124, 120);
